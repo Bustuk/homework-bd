@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="init()" class="content-center">
+  <main>
+    <form>
+      <label for="currency">Currency:</label>
+      <select id="currency" name="currency">
+      </select>
+      <label for="startDate">Start date:</label>
+      <input type="date" name="startDate" value="2020-01-01">
+      <label for="endDate">End date:</label>
+      <input type="date" name="endDate" value="2020-12-01">
+    <input type="submit" value="Submit">
+    </form>
+    <div id="results" class="hidden">
+      <p>Longwest period when the currency was rising: <span id="length"> </span></p> 
+      <p>From <span id="startDate">  </span> to <span id="endDate"> </span></p>
+    </div>
+    <div id="error" class="hidden">Whooops! something went wrong.</div>
+  </main>
+</body>
+<script type="text/javascript">
+async function handleResponse(response) {
+  if (!response.ok) {
+    message = await response.text()
+    throw new Error(message);
+  }
+  return response.json();
+}
+
+function init() {
+  const queryString = window.location.search;
+  addOptions().then(() => setParams(queryString));
+  doSearch(queryString)
+}
+
+function setParams(queryString) {
+  const params = new URLSearchParams(queryString);
+  const paramList = ['currency', 'startDate', 'endDate']
+  paramList.forEach(param => {
+    const value = params.get(param)
+    if (value) {
+      console.log('ustawiam value', value)
+      document.querySelector(`[name=${param}]`).value = value
+    }
+  })
+}
+
+function doSearch(queryString) {
+  fetch(`/api/v1/streak/${queryString}`)
+  .then(handleResponse)
+  .then(response => { 
+    displayStreakResults(response)
+  })
+  .catch(err => {
+    displayError(err)
+  })
+}
+
+function displayStreakResults(result) {
+  document.getElementById('results').classList.remove('hidden')
+  document.getElementById('error').classList.add('hidden')
+  document.getElementById('length').innerText = result.length
+  document.getElementById('startDate').innerText = result.streak[0].start
+  document.getElementById('endDate').innerText = result.streak[result.streak.length-1].end
+}
+
+function displayError(message) {
+  document.getElementById('results').classList.add('hidden')
+  el = document.getElementById('error')
+  console.error(message, el)
+  el.classList.remove('hidden')
+  el.innerText = 'Whooops! something went wrong. \n' + message
+}
+
+function addOptions() {
+  return fetch('currencies.json')
+  .then(handleResponse)
+  .then(currencies => {
+    const fragment = createFragment(currencies)
+    document.getElementById('currency').appendChild(fragment)
+  })
+}
+
+function createFragment(data) {
+  options = createOptions(data)
+  fragment = document.createDocumentFragment()
+  options.forEach(option => fragment.appendChild(option))
+  return fragment
+}
+
+function createOptions(data) {
+  return data.map(currency => {
+    const option = document.createElement('option')
+    option.value = currency;
+    option.text = currency;
+    return option
+  })
+}
+
+</script>
+
+<style>
+.content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.hidden {
+  display: none;
+}
+</style>
+</html>
