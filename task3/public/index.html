@@ -19,7 +19,7 @@
     <input type="submit" value="Submit">
     </form>
     <div id="results" class="hidden">
-      <p>Longwest period when the currency was rising: <span id="length"> </span></p> 
+      <p>Longest period when the currency was increasing in value: <span id="length"> </span></p> 
       <p>From <span id="startDate">  </span> to <span id="endDate"> </span></p>
     </div>
     <div id="error" class="hidden">Whooops! something went wrong.</div>
@@ -36,8 +36,11 @@ async function handleResponse(response) {
 
 function init() {
   const queryString = window.location.search;
-  addOptions().then(() => setParams(queryString));
-  doSearch(queryString)
+  addOptions()
+    .then(() => setParams(queryString));
+  if (queryString) {
+    doSearch(queryString)
+  }
 }
 
 function setParams(queryString) {
@@ -46,7 +49,6 @@ function setParams(queryString) {
   paramList.forEach(param => {
     const value = params.get(param)
     if (value) {
-      console.log('ustawiam value', value)
       document.querySelector(`[name=${param}]`).value = value
     }
   })
@@ -74,7 +76,7 @@ function displayStreakResults(result) {
 function displayError(message) {
   document.getElementById('results').classList.add('hidden')
   el = document.getElementById('error')
-  console.error(message, el)
+  console.error(message)
   el.classList.remove('hidden')
   el.innerText = 'Whooops! something went wrong. \n' + message
 }
