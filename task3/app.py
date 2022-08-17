@@ -1,5 +1,4 @@
 # Flask Api to communicate with http://api.nbp.pl/
-# @todo add requirements.txt 
 import requests
 import json
 import datetime as dt
