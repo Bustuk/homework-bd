@@ -1,18 +1,23 @@
 from itertools import count
+from collections import Counter
 import os
 import shutil
-import multiprocessing
-directory = "tmp-zad2"
+import time
+
+directory = "tmp-task2"
 
 try:
     os.mkdir(directory)
 except FileExistsError:
-    print('Katalog tmp-zad2 istnieje, czyszczę zawartość')
+    print('Directory tmp-task2 exists, removing content')
     shutil.rmtree(directory)
     os.mkdir(directory)
 
-# file = open('./wc_1000_100_10.dat', 'r')
-file = open('./example.dat', 'r')
+
+
+start_time = time.time()
+file = open('./wc_1000_100_10.dat', 'r')
+#file = open('./example.dat', 'r')
 dic = {}
 lettersFilesDict = {}
 letters = []
@@ -38,38 +43,30 @@ while True: # loop for words
         dic[word[0]].write(word  + '\n')
 
 file.close()
-
+print('ALL WORDS WRITTEN')
 # Sorting Files
+
+counters = {}
 
 for letter, f in dic.items():
     f.flush() # saving words
     f.seek(0) # set the position to the beggining of the file
-    # items = f.readlines()
     dict_for_letter = {}
+    cnt = Counter()
     while True:
         word = f.readline()
         if not word:
             break
-        if word in dict_for_letter:
-            dict_for_letter[word] += 1
-        else:
-            dict_for_letter[word] = 1
-        
-
-    print(dict_for_letter)
+        cnt[word] += 1
+    most_common = cnt.most_common()
+    counters.update(most_common[:20])
+    counters.update(most_common[-20:])
+    print('FINISHED COUNTING WORDS FOR LETTER:', letter)
     f.close()
-# function to count the occurence of words in dictionary
-# it print 20 most common words and 20 least common words
-# def print_dic(dic):
-#     print('20 most common words:')
-#     for i in range(20):
-#         max_key = max(dic, key=dic.get)
-#         print(max_key, dic[max_key])
-#         del dic[max_key]
-#     print('20 least common words:')
-#     for i in range(20):
-#         min_key = min(dic, key=dic.get)
-#         print(min_key, dic[min_key])
-#         del dic[min_key]
-#     print('\n')
-# print_dic(dic)
+
+final_most_common = Counter(counters).most_common()
+most_common_20 = final_most_common[:20]
+least_common_20 = final_most_common[-20:]
+print('MOST COMMON', most_common_20)
+print('LEAST COMMON', least_common_20)
+print('IT TOOK', time.time() - start_time, 'SECONDS')

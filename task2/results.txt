@@ -1,0 +1,11 @@
+wc_1000_100_10.dat
+
+MOST COMMON [('X3L\n', 5), ('oeX\n', 4), ('OQX\n', 4), ('KrE\n', 4), ('AjX\n', 4), ('ALH\n', 4), ('bXO\n', 4), ('BYx\n', 4), ('IXA\n', 4), ('u3I\n', 4), ('U0R\n', 4), ('uXX\n', 4), ('siv\n', 4), ('Y17\n', 4), ('FiJ\n', 4), ('XOk\n', 4), ('XFB\n', 4), ('XLV\n', 4), ('X92\n', 4), ('X50\n', 4)]
+LEAST COMMON [('sfp7jcsClEBVX\n', 1), ('s1XixSUQ94\n', 1), ('s7GKReKR0t7\n', 1), ('s4BTM7ygWP24bdR\n', 1), ('sHiMVV0VKWBPvva24wJl\n', 1), ('so3y\n', 1), ('sxl48ATcKnFQOzkj\n', 1), ('s1b\n', 1), ('sKICWF4PS4r3\n', 1), ('s93O9K2BaBkTPlSJ\n', 1), ('sXwh1SYAJvPbONLK\n', 1), ('saJNLCB05nrooM\n', 1), ('sAE\n', 1), ('svSC9YDIoNXVcIO0n\n', 1), ('sXGX2LQl2aD7V5\n', 1), ('s9CbbP9Dd9ChLf\n', 1), ('snj4\n', 1), ('sdX3CkX3\n', 1), ('s5tamRemy9H\n', 1), ('sdOcae5cYV\n', 1)]
+IT TOOK 2.8431930541992188 SECONDS
+
+wc_1000_1000_100.dat
+
+MOST COMMON [('XXX\n', 211), ('XXs\n', 123), ('HXX\n', 120), ('tXX\n', 117), ('XIX\n', 115), ('aXX\n', 115), ('XnX\n', 114), ('VXX\n', 113), ('lXX\n', 112), ('XXS\n', 111), ('XYX\n', 110), ('XXd\n', 110), ('6XX\n', 110), ('XXx\n', 109), ('XaX\n', 109), ('XbX\n', 109), ('9XX\n', 109), ('dXX\n', 108), ('yXX\n', 108), ('FXX\n', 108)]
+LEAST COMMON [('gxVB6c4wHAw\n', 1), ('gdP1uAKROuqYUBS9lNn\n', 1), ('gbISSlILIE6A\n', 1), ('g8uXSYYxX3g\n', 1), ('gaQlF\n', 1), ('gBQte5277m\n', 1), ('gp5FRv\n', 1), ('g6Cl\n', 1), ('gapA2xW1D\n', 1), ('gP6kA770f6Rk7TqJ483G\n', 1), ('gCxFg\n', 1), ('gRYv8Y\n', 1), ('gtNPC1qBPpQAljPubgT\n', 1), ('gu54jhVHJn4z\n', 1), ('g3sEcWh0vIa41\n', 1), ('gXYfXp18nXE6Oq\n', 1), ('gnhwU\n', 1), ('gfijXlBHfX8Cnf7t\n', 1), ('gAHTM3NXljyxQrywla\n', 1), ('gfhI\n', 1)]
+IT TOOK 308.8396370410919 SECONDS
