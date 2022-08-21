@@ -1,3 +1,5 @@
+Results for text files:
+
 wc_1000_100_10.dat
 
 MOST COMMON [('X3L\n', 5), ('oeX\n', 4), ('OQX\n', 4), ('KrE\n', 4), ('AjX\n', 4), ('ALH\n', 4), ('bXO\n', 4), ('BYx\n', 4), ('IXA\n', 4), ('u3I\n', 4), ('U0R\n', 4), ('uXX\n', 4), ('siv\n', 4), ('Y17\n', 4), ('FiJ\n', 4), ('XOk\n', 4), ('XFB\n', 4), ('XLV\n', 4), ('X92\n', 4), ('X50\n', 4)]
@@ -9,3 +11,9 @@ wc_1000_1000_100.dat
 MOST COMMON [('XXX\n', 211), ('XXs\n', 123), ('HXX\n', 120), ('tXX\n', 117), ('XIX\n', 115), ('aXX\n', 115), ('XnX\n', 114), ('VXX\n', 113), ('lXX\n', 112), ('XXS\n', 111), ('XYX\n', 110), ('XXd\n', 110), ('6XX\n', 110), ('XXx\n', 109), ('XaX\n', 109), ('XbX\n', 109), ('9XX\n', 109), ('dXX\n', 108), ('yXX\n', 108), ('FXX\n', 108)]
 LEAST COMMON [('gxVB6c4wHAw\n', 1), ('gdP1uAKROuqYUBS9lNn\n', 1), ('gbISSlILIE6A\n', 1), ('g8uXSYYxX3g\n', 1), ('gaQlF\n', 1), ('gBQte5277m\n', 1), ('gp5FRv\n', 1), ('g6Cl\n', 1), ('gapA2xW1D\n', 1), ('gP6kA770f6Rk7TqJ483G\n', 1), ('gCxFg\n', 1), ('gRYv8Y\n', 1), ('gtNPC1qBPpQAljPubgT\n', 1), ('gu54jhVHJn4z\n', 1), ('g3sEcWh0vIa41\n', 1), ('gXYfXp18nXE6Oq\n', 1), ('gnhwU\n', 1), ('gfijXlBHfX8Cnf7t\n', 1), ('gAHTM3NXljyxQrywla\n', 1), ('gfhI\n', 1)]
 IT TOOK 308.8396370410919 SECONDS
+
+wc_1000_1000_800.dat
+
+MOST COMMON [('XXX\n', 1482), ('NXX\n', 817), ('XEX\n', 804), ('XVX\n', 802), ('XXa\n', 799), ('XXB\n', 795), ('OXX\n', 792), ('XnX\n', 792), ('XX4\n', 791), ('bXX\n', 790), ('rXX\n', 790), ('XXY\n', 789), ('XXq\n', 789), ('XWX\n', 788), ('eXX\n', 788), ('SXX\n', 788), ('X1X\n', 785), ('fXX\n', 784), ('jXX\n', 782), ('XXm\n', 782)]
+LEAST COMMON [('PPQy61wnCH\n', 1), ('PXl7Px4ga3K\n', 1), ('PiXiuWKY\n', 1), ('Eicv5ALRh7\n', 1), ('EVQl4YS4w\n', 1), ('Ebp7isF7q6wpIa12I\n', 1), ('EDrrXCB1A3K7Q0Kq\n', 1), ('EwVSDN2dMH2M2P4Qulo\n', 1), ('EJQOTP8XptRHEXrJ\n', 1), ('EOoXXXY7Ls20\n', 1), ('ESPTcgef3dJ51\n', 1), ('Ezf50Ke\n', 1), ('E0x4I\n', 1), ('EGT9h6Xj0zYJGSp\n', 1), ('EVxLF1HthBriUeLM7iT\n', 1), ('EzfQ7sI47DnRm8NscS\n', 1), ('E61E94rKL7Y9Qv\n', 1), ('EX8b7X114AlX\n', 1), ('EzIcOlMUd425Sf0\n', 1), ('Ex6mvJsgrm\n', 1)]
+IT TOOK 2601.600642681122 SECONDS

@@ -1,4 +1,3 @@
-from itertools import count
 from collections import Counter
 import os
 import shutil
@@ -13,15 +12,11 @@ except FileExistsError:
     shutil.rmtree(directory)
     os.mkdir(directory)
 
-
-
 start_time = time.time()
-file = open('./wc_1000_100_10.dat', 'r')
-#file = open('./example.dat', 'r')
+file = open('./example.dat', 'r')
 dic = {}
 lettersFilesDict = {}
 letters = []
-
 
 # Creating file for every letter
 while True: # loop for words
@@ -58,6 +53,7 @@ for letter, f in dic.items():
         if not word:
             break
         cnt[word] += 1
+    # add 20 most and least common to counters
     most_common = cnt.most_common()
     counters.update(most_common[:20])
     counters.update(most_common[-20:])
